@@ -54,7 +54,7 @@ function csvToArray(csv) {
 
 function doTheJob() {
   //uncomment following if debugging on StackBlitz
-  //getData("https://ded8344d-15b3-45ae-bdcf-a56d4c5785af.filesusr.com/ugd/76040e_8fc14d74bd6844fba40f080df1f7ea40.csv", drawChart);
+  getData("https://ded8344d-15b3-45ae-bdcf-a56d4c5785af.filesusr.com/ugd/76040e_8fc14d74bd6844fba40f080df1f7ea40.csv", drawChart);
   
   //comment out following if debugging (but not deploying) on StackBlitz 
   var auth = firebase.auth();
