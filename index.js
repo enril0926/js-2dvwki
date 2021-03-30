@@ -23,9 +23,10 @@ function drawChart(val) {
   //console.log(val);
 
   var data = new google.visualization.DataTable();
-  data.addColumn("number", "x title");
-  data.addColumn("number", "data 1");
-  data.addColumn("number", "data 2");
+  data.addColumn("number", "time index");
+  data.addColumn("number", "pitch");
+  data.addColumn("number", "roll");
+  //data.addColumn("number", "yaw");
   var array = csvToArray(val);
   array.pop(); //to remove the last element which is [0] probably generated because of last endline in csv
   //console.log(array);
@@ -35,8 +36,8 @@ function drawChart(val) {
   //chart options
   var options = {
     chart: {
-      title: "Title",
-      subtitle: "subtitle"
+      title: "IMU data logger",
+      subtitle: "last uploaded file"
     }
   };
 
@@ -59,7 +60,8 @@ function doTheJob() {
   //comment out following if debugging (but not deploying) on StackBlitz 
   var auth = firebase.auth();
   var storageRef = firebase.storage().ref();
-  var fileRef = storageRef.child("test").child("abc123.csv");
+  storageRef
+  var fileRef = storageRef.child("test.csv");
 
   fileRef.getDownloadURL().then(url => {
     console.log(url);
